@@ -4,6 +4,9 @@
 
 O Reversa é um framework de engenharia reversa de especificações. Ele se instala dentro do seu projeto legado e coordena agentes de IA especializados para analisar o código existente e gerar especificações completas, rastreáveis e prontas para uso por qualquer agente codificador.
 
+> **Status do projeto:** Os agentes e a arquitetura de skills estão completos e prontos para uso.
+> O instalador CLI (`npx reversa install`) está em desenvolvimento ativo — por enquanto, siga o [guia de instalação manual](#instalação-manual) abaixo.
+
 ---
 
 ## Por que o Reversa existe
@@ -30,7 +33,63 @@ Todo o progresso é salvo em `.reversa/state.json` a cada checkpoint — se a se
 
 ---
 
-## Instalação
+## Instalação manual
+
+Enquanto o instalador CLI está em desenvolvimento, copie os arquivos manualmente:
+
+**1. Crie a estrutura no seu projeto:**
+
+```bash
+mkdir -p .agents/skills .reversa/context
+```
+
+**2. Copie os agentes:**
+
+```bash
+# Clone o repositório do Reversa
+git clone https://github.com/sandeco/reversa.git /tmp/reversa
+
+# Copie os skills para o seu projeto
+cp -r /tmp/reversa/agents/reversa-* .agents/skills/
+
+# Para Claude Code, faça o mirror em .claude/skills/
+mkdir -p .claude/skills
+cp -r /tmp/reversa/agents/reversa-* .claude/skills/
+```
+
+**3. Crie os arquivos de configuração:**
+
+```bash
+# state.json
+cp /tmp/reversa/templates/state.json .reversa/state.json
+
+# plan.md
+cp /tmp/reversa/templates/plan.md .reversa/plan.md
+
+# config.toml
+cp /tmp/reversa/templates/config.toml .reversa/config.toml
+```
+
+**4. Adicione o arquivo de entrada para sua engine:**
+
+```bash
+# Claude Code
+cat /tmp/reversa/templates/engines/CLAUDE.md >> CLAUDE.md  # ou crie novo
+
+# Codex
+cat /tmp/reversa/templates/engines/AGENTS.md >> AGENTS.md
+
+# Cursor
+cat /tmp/reversa/templates/engines/cursorrules >> .cursorrules
+```
+
+**Requisitos:** Node.js 18+ (para o CLI quando disponível). Nenhuma dependência para uso manual.
+
+> O Reversa **nunca apaga ou modifica** arquivos existentes no seu projeto. Os agentes escrevem apenas em `.reversa/` e `_reversa_sdd/`.
+
+---
+
+## Instalação via CLI (em desenvolvimento)
 
 ```bash
 npx reversa install
@@ -41,10 +100,6 @@ O instalador vai:
 2. Perguntar quais agentes instalar (todos selecionados por padrão)
 3. Configurar os arquivos de entrada para cada engine escolhida
 4. Criar a estrutura `.reversa/` no seu projeto
-
-**Requisitos:** Node.js 18 ou superior.
-
-> O Reversa **nunca apaga ou modifica** arquivos existentes no seu projeto. Se um arquivo de configuração já existir (como `CLAUDE.md`), o instalador pergunta se você quer mesclar — e só adiciona conteúdo, nunca remove.
 
 ---
 
@@ -70,24 +125,24 @@ reversa
 
 ### Obrigatórios
 
-| Agente | Função |
-|--------|--------|
-| **Maestro** | Orquestrador central. Coordena todos os agentes, salva checkpoints e guia o usuário |
-| **Scout** | Mapeia a superfície do projeto: estrutura, tecnologias, frameworks, dependências e entry points |
-| **Arqueólogo** | Análise profunda módulo a módulo: algoritmos, fluxos de controle, estruturas de dados |
-| **Detetive** | Extrai o conhecimento de negócio implícito: regras, ADRs retroativos, máquinas de estado, permissões |
-| **Arquiteto** | Sintetiza tudo em diagramas C4, ERD completo, mapa de integrações e dívidas técnicas |
-| **Redator** | Gera as especificações como contratos operacionais com rastreabilidade de código |
+| Agente | Skill | Função |
+|--------|-------|--------|
+| **Maestro** | `reversa-maestro` | Orquestrador central. Coordena todos os agentes, salva checkpoints e guia o usuário |
+| **Scout** | `reversa-scout` | Mapeia a superfície do projeto: estrutura, tecnologias, frameworks, dependências e entry points |
+| **Arqueólogo** | `reversa-arqueologo` | Análise profunda módulo a módulo: algoritmos, fluxos de controle, estruturas de dados |
+| **Detetive** | `reversa-detetive` | Extrai o conhecimento de negócio implícito: regras, ADRs retroativos, máquinas de estado, permissões |
+| **Arquiteto** | `reversa-arquiteto` | Sintetiza tudo em diagramas C4, ERD completo, mapa de integrações e dívidas técnicas |
+| **Redator** | `reversa-redator` | Gera as especificações como contratos operacionais com rastreabilidade de código |
 
 ### Opcionais (instalados por padrão, podem ser desmarcados)
 
-| Agente | Função |
-|--------|--------|
-| **Advogado do Diabo** | Revisa as specs, encontra inconsistências e gera perguntas para o usuário validar lacunas |
-| **Tracer** | Análise dinâmica: resolve lacunas via logs, tracing em execução e dados reais (somente leitura) |
-| **Visor** | Documenta a interface a partir de screenshots — sem precisar que o sistema esteja rodando |
-| **Data Master** | Análise completa do banco: DDL, migrations, ORM, ERD, triggers, procedures |
-| **Design System** | Extrai tokens de design: cores, tipografia, espaçamentos, temas e componentes |
+| Agente | Skill | Função |
+|--------|-------|--------|
+| **Advogado do Diabo** | `reversa-advogado` | Revisa as specs, encontra inconsistências e gera perguntas para o usuário validar lacunas |
+| **Tracer** | `reversa-tracer` | Análise dinâmica: resolve lacunas via logs, tracing em execução e dados reais (somente leitura) |
+| **Visor** | `reversa-visor` | Documenta a interface a partir de screenshots — sem precisar que o sistema esteja rodando |
+| **Data Master** | `reversa-data-master` | Análise completa do banco: DDL, migrations, ORM, ERD, triggers, procedures |
+| **Design System** | `reversa-design-system` | Extrai tokens de design: cores, tipografia, espaçamentos, temas e componentes |
 
 ---
 
@@ -139,39 +194,53 @@ Toda afirmação gerada pelo Reversa é marcada com:
 
 ## Engines suportadas
 
-| Engine | Arquivo criado | Comando |
-|--------|---------------|---------|
-| Claude Code | `CLAUDE.md` | `/reversa` |
-| Gemini CLI | `GEMINI.md` | `/reversa` |
-| Cursor | `.cursorrules` | `/reversa` |
-| Windsurf | `.windsurfrules` | `/reversa` |
-| Codex CLI | `AGENTS.md` | `reversa` |
-| Cline / Roo Cline | `.clinerules` | `reversa` |
-| Outros | Configuração manual | `reversa` |
-
----
-
-## Outros comandos
-
-```bash
-npx reversa update       # Atualiza os agentes para a versão mais recente
-npx reversa status       # Mostra o estado atual da análise
-npx reversa add-agent    # Adiciona um agente ao projeto
-npx reversa add-engine   # Adiciona suporte a uma engine
-npx reversa uninstall    # Remove o Reversa do projeto
-```
+| Engine | Arquivo criado | Skill path | Comando |
+|--------|---------------|-----------|---------|
+| Claude Code | `CLAUDE.md` + `.claude/skills/` | `.claude/skills/reversa-*/` | `/reversa` |
+| Gemini CLI | `GEMINI.md` | `.agents/skills/reversa-*/` | `/reversa` |
+| Cursor | `.cursorrules` | `.agents/skills/reversa-*/` | `/reversa` |
+| Windsurf | `.windsurfrules` | `.agents/skills/reversa-*/` | `/reversa` |
+| Codex CLI | `AGENTS.md` | `.agents/skills/reversa-*/` | `reversa` |
+| VS Code Copilot | — | `.agents/skills/reversa-*/` | `reversa` |
+| Outros | Configuração manual | `.agents/skills/reversa-*/` | `reversa` |
 
 ---
 
 ## Estrutura interna
 
 ```
-.reversa/               # Diretório interno do Reversa (não edite manualmente)
-├── state.json          # Estado persistente entre sessões
-├── plan.md             # Plano de exploração (pode ser editado antes de iniciar)
+.reversa/
+├── state.json          # Estado da análise entre sessões
+├── config.toml         # Configuração do projeto
+├── config.user.toml    # Configurações pessoais (não commitar)
+├── plan.md             # Plano de exploração (editável)
 ├── version             # Versão instalada
-├── agents/             # Prompts dos agentes instalados
-└── context/            # Conhecimento intermediário entre agentes
+└── context/            # Dados intermediários entre agentes
+    ├── surface.json    # Gerado pelo Scout
+    └── modules.json    # Gerado pelo Arqueólogo
+
+.agents/skills/         # Skills padrão (todos os agentes compatíveis)
+    reversa-maestro/
+    reversa-scout/
+    ...
+
+.claude/skills/         # Mirror para Claude Code
+    reversa-maestro/
+    reversa-scout/
+    ...
+```
+
+---
+
+## Comandos CLI
+
+```bash
+npx reversa status       # Mostra o estado atual da análise
+npx reversa install      # Instala o Reversa no projeto (em desenvolvimento)
+npx reversa update       # Atualiza os agentes para a versão mais recente
+npx reversa add-agent    # Adiciona um agente ao projeto
+npx reversa add-engine   # Adiciona suporte a uma engine
+npx reversa uninstall    # Remove o Reversa do projeto
 ```
 
 ---

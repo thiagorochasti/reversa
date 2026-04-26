@@ -24,6 +24,7 @@ Pergunte uma de cada vez:
 - "Qual é o nome deste projeto?"
 
 Salve as respostas em `.reversa/state.json` nos campos `user_name`, `chat_language`, `doc_language` e `project`.
+Consulte `references/state-schema.md` para o schema completo do arquivo.
 
 ## 4. Pedido de autorização
 

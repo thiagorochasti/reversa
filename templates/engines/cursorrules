@@ -1,9 +1,8 @@
 # Reversa — Framework de Engenharia Reversa
 
-Quando o usuário digitar "/reversa" ou a palavra "reversa" sozinha em uma mensagem:
-1. Leia o arquivo .reversa/state.json
-2. Leia o arquivo .reversa/agents/maestro.md na íntegra
-3. Siga exatamente as instruções contidas no Maestro
+Quando o usuário digitar "/reversa" ou "reversa" sozinho em uma mensagem:
+1. Ative o skill "reversa-maestro" em .agents/skills/reversa-maestro/SKILL.md
+2. Leia o SKILL.md na íntegra e siga exatamente as instruções do Maestro
 
 Regra absoluta: nunca apague, modifique ou sobrescreva arquivos pré-existentes do projeto legado.
 O Reversa escreve APENAS em .reversa/ e _reversa_sdd/.

@@ -1,5 +1,9 @@
 {
   "version": "{{VERSION}}",
+  "project": "",
+  "user_name": "",
+  "chat_language": "pt-br",
+  "doc_language": "pt-br",
   "phase": null,
   "completed": [],
   "pending": ["reconhecimento", "escavacao", "interpretacao", "geracao", "revisao"],

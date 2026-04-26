@@ -10,9 +10,8 @@ Digite `reversa` para ativar o Maestro e iniciar ou retomar a análise do projet
 
 Quando o usuário digitar `reversa` sozinho em uma mensagem:
 
-1. Leia o arquivo `.reversa/state.json`
-2. Leia o arquivo `.reversa/agents/maestro.md` na íntegra
-3. Siga exatamente as instruções contidas no Maestro
+1. Ative o skill `reversa-maestro` disponível em `.agents/skills/reversa-maestro/SKILL.md`
+2. Leia o SKILL.md na íntegra e siga exatamente as instruções do Maestro
 
 ## Regra não-negociável
 

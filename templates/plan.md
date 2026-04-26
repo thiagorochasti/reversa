@@ -14,7 +14,9 @@
 
 ## Fase 2: Escavação 🏗️
 
-{{ARQUEOLOG_TASKS}}
+> O Maestro preenche esta seção com os módulos reais após o Scout concluir o reconhecimento.
+
+- [ ] **Arqueólogo** — Análise dos módulos identificados pelo Scout
 
 ## Fase 3: Interpretação 🧠
 
