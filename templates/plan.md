@@ -36,9 +36,9 @@
 
 ## Fase 5: Revisão ✅
 
-- [ ] **Advogado do Diabo** — Revisão cruzada de specs
-- [ ] **Advogado do Diabo** — Resolução de lacunas com o usuário
-- [ ] **Advogado do Diabo** — Relatório de confiança final
+- [ ] **Revisor** — Revisão cruzada de specs
+- [ ] **Revisor** — Resolução de lacunas com o usuário
+- [ ] **Revisor** — Relatório de confiança final
 
 ---
 

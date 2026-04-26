@@ -1,6 +1,6 @@
 # Template — _reversa_sdd/confidence-report.md
 
-Gerado pelo Advogado do Diabo ao final da revisão.
+Gerado pelo Revisor ao final da revisão.
 
 ---
 
@@ -9,7 +9,7 @@ Gerado pelo Advogado do Diabo ao final da revisão.
 ```markdown
 # Relatório de Confiança — [Nome do Projeto]
 
-> Gerado pelo Advogado do Diabo em [data]
+> Gerado pelo Revisor em [data]
 
 ---
 

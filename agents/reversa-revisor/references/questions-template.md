@@ -1,10 +1,10 @@
 # Template — _reversa_sdd/questions.md
 
-Este arquivo é gerado pelo Advogado do Diabo e preenchido pelo usuário.
+Este arquivo é gerado pelo Revisor e preenchido pelo usuário.
 
 ---
 
-## Como o Advogado cria este arquivo
+## Como o Revisor cria este arquivo
 
 Para cada lacuna 🔴 que só o usuário pode resolver, crie uma entrada:
 
@@ -25,11 +25,11 @@ Para cada lacuna 🔴 que só o usuário pode resolver, crie uma entrada:
 
 O usuário deve:
 1. Preencher o campo `**Resposta:**` de cada pergunta
-2. Avisar ao Advogado quando terminar (digitar `reversa` ou "respondi as perguntas")
+2. Avisar ao Revisor quando terminar (digitar `reversa` ou "respondi as perguntas")
 
 ---
 
-## Como o Advogado processa as respostas
+## Como o Revisor processa as respostas
 
 Após receber aviso do usuário:
 1. Leia o arquivo completo
@@ -47,7 +47,7 @@ Após receber aviso do usuário:
 ```markdown
 # Perguntas para Validação — [Nome do Projeto]
 
-> Gerado pelo Advogado do Diabo em [data]
+> Gerado pelo Revisor em [data]
 > Responda cada pergunta e me avise quando terminar.
 
 ---

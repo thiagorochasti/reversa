@@ -83,7 +83,7 @@ O Reversa usa um pipeline de 5 fases orquestradas pelo **Maestro**:
 
 ```
 Reconhecimento → Escavação → Interpretação → Geração  → Revisão
-    Scout        Arqueólogo    Detetive       Redator    Advogado
+    Scout        Arqueólogo    Detetive       Redator    Revisor
                                Arquiteto
 ```
 
@@ -108,7 +108,7 @@ Agentes independentes (rodam em qualquer fase): **Visor**, **Data Master**, **De
 
 | Agente | Função |
 |--------|--------|
-| **Advogado do Diabo** | Revisa as specs, encontra inconsistências e valida lacunas com o usuário |
+| **Revisor do Diabo** | Revisa as specs, encontra inconsistências e valida lacunas com o usuário |
 | **Tracer** | Análise dinâmica: resolve lacunas via logs, tracing e dados reais (somente leitura) |
 | **Visor** | Documenta a interface a partir de screenshots — sem precisar que o sistema esteja rodando |
 | **Data Master** | Análise completa do banco: DDL, migrations, ORM, ERD, triggers, procedures |

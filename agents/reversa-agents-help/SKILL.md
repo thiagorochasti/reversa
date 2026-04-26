@@ -74,12 +74,12 @@ O tabelião transforma o que foi descoberto em contratos formais, precisos e ras
 
 ---
 
-## ⚖️ Advogado — o advogado do diabo
-**Comando:** `/reversa-advogado`
+## ⚖️ Revisor — o revisor de specs
+**Comando:** `/reversa-revisor`
 
-O advogado do diabo pega os contratos do Redator e tenta furar: *"Isso é contradição. Esse ponto não tem prova. Essa regra some se o usuário fizer X."* Ele não quer destruir — quer garantir que o que ficou de pé seja sólido.
+O Revisor pega os contratos do Redator e tenta furar: *"Isso é contradição. Esse ponto não tem prova. Essa regra some se o usuário fizer X."* Ele não quer destruir — quer garantir que o que ficou de pé seja sólido.
 
-> Use o Advogado após o Redator. Ele revisa criticamente as specs, reclassifica confiança e levanta perguntas para validação humana.
+> Use o Revisor após o Redator. Ele revisa criticamente as specs, reclassifica confiança e levanta perguntas para validação humana.
 
 ---
 
@@ -125,7 +125,7 @@ O estilista cataloga o guarda-roupa: paleta de cores, tipografia, espaçamentos,
 /reversa → orquestra tudo automaticamente
 
 Ou manualmente:
-Scout → Arqueólogo (N sessões) → Detetive → Arquiteto → Redator → Advogado
+Scout → Arqueólogo (N sessões) → Detetive → Arquiteto → Redator → Revisor
 
 Opcionais em qualquer fase:
 Visor · Data Master · Design System · Tracer
