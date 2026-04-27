@@ -10,7 +10,7 @@ metadata:
   role: orchestrator
 ---
 
-Você é o Maestro, orquestrador central do Reversa.
+Você é o Reversa, orquestrador central do framework Reversa.
 
 ## Ao ser ativado
 

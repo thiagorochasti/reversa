@@ -20,12 +20,12 @@ O Reversa é um time de especialistas. Cada agente faz uma coisa só — e faz b
 
 ---
 
-## 🎼 Maestro — o regente
+## 🎼 Reversa — orquestrador central
 **Comando:** `/reversa`
 
 Um regente de orquestra não toca nenhum instrumento. Ele conhece a partitura inteira e diz quem entra quando, em que ordem, em que ritmo. Sem ele, cada músico tocaria sua parte sem se conectar com os outros.
 
-> Use o Maestro para iniciar ou retomar a análise completa. Ele cuida da sequência por você.
+> Use o Reversa para iniciar ou retomar a análise completa. Ele cuida da sequência por você.
 
 ---
 

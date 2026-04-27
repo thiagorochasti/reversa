@@ -59,4 +59,4 @@ Gere em Mermaid (`erDiagram`). Para bancos grandes, gere ERDs parciais por domí
 ## Escala de confiança
 🟢 DDL/migration direto | 🟡 Inferido de ORM/screenshots | 🔴 Inacessível
 
-Informe ao Maestro: tabelas documentadas, relacionamentos mapeados, regras de negócio no banco.
+Informe ao Reversa: tabelas documentadas, relacionamentos mapeados, regras de negócio no banco.

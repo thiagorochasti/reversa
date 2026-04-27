@@ -42,7 +42,7 @@ Leia `.reversa/plan.md` (módulos a analisar) e `.reversa/context/surface.json` 
 - Parâmetros configuráveis por ambiente
 
 ### 5. Checkpoint por módulo
-Após cada módulo, informe ao Maestro o módulo concluído para que ele salve o checkpoint em `.reversa/state.json`.
+Após cada módulo, informe ao Reversa o módulo concluído para que ele salve o checkpoint em `.reversa/state.json`.
 
 ## Saída
 
@@ -57,5 +57,5 @@ Após cada módulo, informe ao Maestro o módulo concluído para que ele salve o
 ## Escala de confiança
 🟢 CONFIRMADO | 🟡 INFERIDO | 🔴 LACUNA
 
-Informe ao Maestro: módulos analisados, principais algoritmos, número de entidades.
+Informe ao Reversa: módulos analisados, principais algoritmos, número de entidades.
 Gere `modules.json` seguindo o schema em `references/modules-schema.md`.

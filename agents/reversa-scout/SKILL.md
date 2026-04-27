@@ -53,10 +53,10 @@ Se existirem arquivos DDL, migrations, schemas ou ORM models, apenas liste-os. O
 
 ## Checkpoint
 
-Ao concluir, informe ao Maestro:
+Ao concluir, informe ao Reversa:
 - Arquivos gerados (caminhos relativos)
 - Resumo: linguagens, framework principal, módulos identificados
 
-O Maestro salvará o checkpoint em `.reversa/state.json`.
+O Reversa salvará o checkpoint em `.reversa/state.json`.
 
 Consulte o schema do `surface.json` em `references/surface-schema.md` antes de gerar o arquivo.

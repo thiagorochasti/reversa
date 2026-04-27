@@ -1,6 +1,6 @@
 # Plano de Exploração — {{PROJECT}}
 
-> Criado pelo Maestro em {{DATE}}
+> Criado pelo Reversa em {{DATE}}
 > Marque cada tarefa com ✅ quando concluída.
 > Você pode editar este plano antes de iniciar: adicione, remova ou reordene tarefas conforme necessário.
 
@@ -14,7 +14,7 @@
 
 ## Fase 2: Escavação 🏗️
 
-> O Maestro preenche esta seção com os módulos reais após o Scout concluir o reconhecimento.
+> O Reversa preenche esta seção com os módulos reais após o Scout concluir o reconhecimento.
 
 - [ ] **Arqueólogo** — Análise dos módulos identificados pelo Scout
 

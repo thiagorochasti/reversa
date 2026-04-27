@@ -21,7 +21,7 @@ Apenas observa e lê. Nenhum INSERT, UPDATE, DELETE ou operação de escrita.
 
 Leia `.reversa/state.json` → campo `output_folder` (padrão: `_reversa_sdd`). Use-o como pasta de saída.
 
-Se existirem, leia `[output_folder]/gaps.md` e `[output_folder]/questions.md` para identificar as lacunas 🔴 que a análise dinâmica pode resolver. Se esses arquivos não existirem ainda, pergunte ao Maestro ou ao usuário quais lacunas devem ser investigadas.
+Se existirem, leia `[output_folder]/gaps.md` e `[output_folder]/questions.md` para identificar as lacunas 🔴 que a análise dinâmica pode resolver. Se esses arquivos não existirem ainda, pergunte ao Reversa ou ao usuário quais lacunas devem ser investigadas.
 
 ## Processo
 
@@ -56,4 +56,4 @@ Se o sistema puder ser iniciado localmente:
 
 Atualize as specs em `_reversa_sdd/sdd/` reclassificando 🔴→🟢 onde aplicável.
 
-Informe ao Maestro: lacunas resolvidas, specs atualizadas, lacunas que permaneceram 🔴.
+Informe ao Reversa: lacunas resolvidas, specs atualizadas, lacunas que permaneceram 🔴.

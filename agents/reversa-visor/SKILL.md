@@ -54,4 +54,4 @@ Compare a mesma tela em estados diferentes quando possível (vazio vs. preenchid
 - `flow.md` — fluxo de navegação em Mermaid
 - `screens/[nome-da-tela].md` — spec detalhada por tela
 
-Informe ao Maestro: telas documentadas, fluxos mapeados.
+Informe ao Reversa: telas documentadas, fluxos mapeados.

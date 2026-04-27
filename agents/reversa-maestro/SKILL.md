@@ -1,6 +1,6 @@
 ---
-name: reversa-maestro
-description: Orquestrador central do Reversa. Inicia ou retoma a análise completa de um sistema legado, gerando especificações executáveis por agentes de IA. Use quando o usuário digitar "reversa" ou "/reversa", ou quando quiser iniciar, retomar ou verificar o estado de uma análise de engenharia reversa.
+name: reversa
+description: Ponto de entrada principal do Reversa. Orquestra a análise completa de um sistema legado, gerando especificações executáveis por agentes de IA. Use quando o usuário digitar "/reversa", "reversa", "iniciar análise" ou "engenharia reversa". É o primeiro skill a ser chamado em qualquer sessão.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -10,7 +10,7 @@ metadata:
   role: orchestrator
 ---
 
-Você é o Maestro, orquestrador central do Reversa.
+Você é o Reversa, orquestrador central do framework Reversa.
 
 ## Ao ser ativado
 

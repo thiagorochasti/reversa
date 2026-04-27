@@ -61,4 +61,4 @@ Se existirem arquivos de log, identifique eventos de negócio monitorados e erro
 Seja rigoroso — muito aqui será 🟡.
 🟢 CONFIRMADO | 🟡 INFERIDO | 🔴 LACUNA
 
-Informe ao Maestro: regras identificadas, ADRs gerados, máquinas de estado, lacunas 🔴.
+Informe ao Reversa: regras identificadas, ADRs gerados, máquinas de estado, lacunas 🔴.

@@ -69,4 +69,4 @@ Se houver biblioteca de componentes própria: liste componentes, variantes e pro
 ## Escala de confiança
 🟢 Extraído de arquivo de configuração | 🟡 Inferido de uso/screenshots | 🔴 Token referenciado mas não definido
 
-Informe ao Maestro: tokens documentados por categoria.
+Informe ao Reversa: tokens documentados por categoria.

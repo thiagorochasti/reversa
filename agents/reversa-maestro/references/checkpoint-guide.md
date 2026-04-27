@@ -1,6 +1,6 @@
 # Guia de Checkpoints — .reversa/state.json
 
-O Maestro é o único agente que **escreve** no state.json. Os demais agentes apenas leem.
+O Reversa é o único agente que **escreve** no state.json. Os demais agentes apenas leem.
 
 ## Regras absolutas
 
@@ -94,7 +94,7 @@ Ao mover de fase:
     }
   },
   "engines": ["claude-code"],
-  "agents": ["reversa-maestro", "reversa-scout", "reversa-arqueologo"],
+  "agents": ["reversa", "reversa-scout", "reversa-arqueologo"],
   "created_files": []
 }
 ```

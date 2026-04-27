@@ -64,4 +64,4 @@ Crie `_reversa_sdd/traceability/spec-impact-matrix.md`: qual componente impacta 
 ## Escala de confiança
 🟢 CONFIRMADO | 🟡 INFERIDO | 🔴 LACUNA
 
-Informe ao Maestro: componentes, containers, integrações e dívidas técnicas identificadas.
+Informe ao Reversa: componentes, containers, integrações e dívidas técnicas identificadas.

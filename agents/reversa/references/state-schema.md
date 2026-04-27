@@ -1,6 +1,6 @@
 # Schema — .reversa/state.json
 
-Este arquivo persiste o estado completo da análise entre sessões. O Maestro lê e escreve neste arquivo.
+Este arquivo persiste o estado completo da análise entre sessões. O Reversa lê e escreve neste arquivo.
 
 ## Estrutura completa
 
@@ -17,7 +17,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Maestro l�
   "completed": ["reconhecimento"],
   "pending": ["escavacao", "interpretacao", "geracao", "revisao"],
   "engines": ["claude-code"],
-  "agents": ["reversa-maestro", "reversa-scout", "reversa-arqueologo"],
+  "agents": ["reversa", "reversa-scout", "reversa-arqueologo"],
   "checkpoints": {
     "scout": {
       "completed_at": "2026-04-26T10:00:00Z",
@@ -39,7 +39,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Maestro l�
   },
   "created_files": [
     "CLAUDE.md",
-    ".agents/skills/reversa-maestro/SKILL.md",
+    ".agents/skills/reversa/SKILL.md",
     ".reversa/state.json",
     ".reversa/plan.md"
   ]

@@ -128,7 +128,7 @@ Specs em `_reversa_sdd/sdd/` são atualizadas in-place com as reclassificações
 
 ## Checkpoint
 
-Informe ao Maestro:
+Informe ao Reversa:
 - Número de specs revisadas
 - Revisão cruzada realizada: sim/não (engine consultada)
 - Quantidade de reclassificações (🔴→🟢, 🟡→🟢, etc.)

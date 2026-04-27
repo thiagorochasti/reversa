@@ -8,9 +8,17 @@ O Reversa é um framework de engenharia reversa de especificações. Ele se inst
 
 ## Por que o Reversa existe
 
-Agentes de IA são excelentes para criar software novo a partir de especificações. O problema é que a maioria dos projetos reais não tem especificações — o conhecimento está no código, nos commits, na cabeça das pessoas.
+A maioria dos sistemas em produção carrega anos de conhecimento acumulado: regras de negócio implícitas, decisões arquiteturais não documentadas, lógica crítica enterrada em código que ninguém quer tocar. Esse conhecimento existe, mas está preso.
 
-O Reversa inverte esse fluxo: parte do código existente para gerar as specs. O resultado é um conjunto de documentos que qualquer agente de IA pode usar para entender, evoluir, refatorar ou reimplementar o sistema com fidelidade.
+Agentes de IA são transformadores para criar e evoluir software, mas dependem de especificações para operar com segurança. Para sistemas novos, você escreve a spec e o agente executa. Para sistemas legados, ou para aqueles que você construiu usando vibe coding puro, não existe spec: o agente não tem como saber o que não pode quebrar.
+
+**O Reversa é a ponte entre o sistema legado e os agentes de IA.**
+
+Ele analisa o código existente, extrai o conhecimento acumulado (regras de negócio, fluxos, contratos entre módulos, decisões arquiteturais retroativas) e transforma tudo em especificações executáveis, rastreáveis e prontas para uso por qualquer agente codificador.
+
+O resultado não é documentação para humanos lerem. São contratos operacionais que permitem a um agente **evoluir o sistema com fidelidade ao que já existe**.
+
+Para empresas que não podem ou não querem reescrever tudo do zero: o Reversa abre o caminho para modernizar, refatorar e continuar evoluindo sistemas legados com IA, com a segurança de saber exatamente o que está sendo mudado e por quê.
 
 ---
 
@@ -61,7 +69,7 @@ O instalador vai:
 
 ## Como usar
 
-Após a instalação, abra o projeto no agente de IA e ative o Maestro:
+Após a instalação, abra o projeto no agente de IA e ative o Reversa:
 
 ```
 /reversa
@@ -73,13 +81,13 @@ Em engines sem suporte a slash commands (como Codex):
 reversa
 ```
 
-O Maestro vai se apresentar, criar um plano de exploração personalizado e coordenar toda a análise. O progresso é salvo em `.reversa/state.json` a cada checkpoint — se a sessão for interrompida, basta digitar `reversa` para retomar de onde parou.
+O Reversa vai se apresentar, criar um plano de exploração personalizado e coordenar toda a análise. O progresso é salvo em `.reversa/state.json` a cada checkpoint — se a sessão for interrompida, basta digitar `reversa` para retomar de onde parou.
 
 ---
 
 ## Como funciona
 
-O Reversa usa um pipeline de 5 fases orquestradas pelo **Maestro**:
+O Reversa usa um pipeline de 5 fases orquestradas pelo **Reversa**:
 
 ```
 Reconhecimento → Escavação → Interpretação → Geração  → Revisão
@@ -97,7 +105,7 @@ Agentes independentes (rodam em qualquer fase): **Visor**, **Data Master**, **De
 
 | Agente | Função |
 |--------|--------|
-| **Maestro** | Orquestrador central. Coordena todos os agentes, salva checkpoints e guia o usuário |
+| **Reversa** | Orquestrador central. Coordena todos os agentes, salva checkpoints e guia o usuário |
 | **Scout** | Mapeia a superfície: estrutura de pastas, linguagens, frameworks, dependências, entry points |
 | **Arqueólogo** | Análise profunda módulo a módulo: algoritmos, fluxos de controle, estruturas de dados |
 | **Detetive** | Extrai conhecimento de negócio implícito: regras, ADRs retroativos, máquinas de estado, permissões |

@@ -86,7 +86,7 @@ Arquivos sem spec correspondente ficam com "—" — são candidatos à análise
 
 ### Passo 4 — Encerramento
 
-Ao concluir todos os itens, informe ao Maestro:
+Ao concluir todos os itens, informe ao Reversa:
 - Specs geradas (quantidade)
 - APIs documentadas (quantidade)
 - User stories criadas (quantidade)
