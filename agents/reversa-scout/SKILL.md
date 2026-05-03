@@ -42,6 +42,25 @@ Se existirem arquivos DDL, migrations, schemas ou ORM models, apenas liste-os. O
 - Frameworks de teste identificados
 - Estimativa de cobertura (contagem de arquivos `*.test.*`, `*.spec.*`)
 
+### 6. Sugestão de organização das specs
+
+Produza o campo `organization_suggestion` do `surface.json` aplicando as heurísticas abaixo na ordem em que aparecem. Pare na primeira heurística cujo sinal seja claramente dominante. Se nenhuma se aplicar, use o fallback `feature`.
+
+| Sinal observado | Onde olhar | Sugestão |
+|-----------------|------------|----------|
+| Roteamento centralizado | `routes.*`, `urls.py`, `*Controller.cs`, `@RestController`, `app.get/post/...`, `Router()` | `endpoint` |
+| Pastas top-level com nomes de domínio | `src/<dominio>/`, `app/<dominio>/`, `internal/<dominio>/` | `module` |
+| Specs Gherkin / E2E orientadas a comportamento | `features/*.feature`, `*.spec.*` BDD, `cypress/e2e/*.cy.*` | `use-case` |
+| Múltiplos sinais acima coexistindo com peso parecido | qualquer combinação de 2 ou mais | `hybrid` |
+| Nenhum sinal claro | fallback | `feature` |
+
+Para o caso `feature` (fallback), liste em `organization_suggestion.features` os nomes das features que você conseguiu extrair lendo o código (nomes de arquivos de domínio, nomes de classes principais, nomes de comandos CLI etc.).
+
+Preencha sempre:
+- `granularity` (um dos 5 valores acima, nunca `custom`)
+- `rationale` em uma frase curta no idioma da instalação
+- `signals` com `type` e `evidence` (lista de caminhos relativos que comprovam o sinal)
+
 ## Saída
 
 **Em `_reversa_sdd/`:**

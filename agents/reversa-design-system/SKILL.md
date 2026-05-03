@@ -69,4 +69,8 @@ Se houver biblioteca de componentes própria: liste componentes, variantes e pro
 ## Escala de confiança
 🟢 Extraído de arquivo de configuração | 🟡 Inferido de uso/screenshots | 🔴 Token referenciado mas não definido
 
+## Layout de saída (transversal)
+
+Este agente produz artefatos transversais à organização escolhida em `[specs]` do `config.toml`. Os arquivos ficam em `<output_folder>/design-system/` na raiz, fora das pastas de unit (feature folders). Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
+
 Informe ao Reversa: tokens documentados por categoria.

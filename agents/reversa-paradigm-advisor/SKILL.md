@@ -94,7 +94,7 @@ Use `references/paradigm-catalog.md` § "Tabela de gaps típicos por par" para a
 Mínimo de **4 implicações concretas** com exemplo do legado. Exemplo de formato:
 
 > **Implicação 1: tratamento de erro deixa de ser try/catch local; vira retry/DLQ**
-> No legado, vejo que `OrderService.confirmOrder()` (em `_reversa_sdd/sdd/orders.md`) lança exceção e depende do controller para responder 500 ao usuário. No paradigma alvo (event-driven em Node), confirmar pedido vira evento; falhas vão para DLQ; o usuário recebe 202 imediato e o resultado chega assíncrono.
+> No legado, vejo que `OrderService.confirmOrder()` (em `_reversa_sdd/orders/design.md`) lança exceção e depende do controller para responder 500 ao usuário. No paradigma alvo (event-driven em Node), confirmar pedido vira evento; falhas vão para DLQ; o usuário recebe 202 imediato e o resultado chega assíncrono.
 
 ### 5. Apresentar as 3 opções
 
@@ -154,6 +154,10 @@ Devolva controle ao orquestrador `/reversa-migrate` para a pausa de revisão hum
 - **Paradigma legado indetectável** (`_reversa_sdd/` muito pobre): registre como 🔴 LACUNA, peça confirmação ao usuário com base na intuição dele sobre o legado.
 - **Legado híbrido**: detecte componentes, peça decisão por componente ou decisão unificadora ("vamos forçar tudo para um paradigma único?").
 - **Engine sem chat interativo**: escreva `pending_decisions.md` em `_reversa_sdd/migration/` com as três opções e aguarde leitura.
+
+## Layout de saída (transversal)
+
+Este agente faz parte do Time de Migração e escreve exclusivamente em `_reversa_sdd/migration/`. Essa pasta é transversal à organização escolhida em `[specs]` do `config.toml`, fora das pastas de unit (feature folders) do Time de Descoberta. Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
 
 ## Regras absolutas
 

@@ -1,32 +1,25 @@
-# [Nome do Componente]
+# [Nome da Unit]
+
+> Template do arquivo `requirements.md`. Foca no QUE a unit faz, não no como.
 
 ## Visão Geral
-[O que é, qual problema resolve — 2 a 3 linhas]
+[O que é, qual problema resolve, 2 a 3 linhas]
 
 ## Responsabilidades
 - [Responsabilidade 1]
 - [Responsabilidade 2]
-
-## Interface
-[Entradas, saídas, parâmetros, tipos de dados]
 
 ## Regras de Negócio
 - [Regra 1] 🟢
 - [Regra 2] 🟡
 - [Comportamento desconhecido] 🔴
 
-## Fluxo Principal
-1. [Passo 1]
-2. [Passo 2]
-3. [Passo N]
+## Requisitos Funcionais
 
-## Fluxos Alternativos
-- **[Condição especial]:** [comportamento]
-- **[Caso de erro]:** [comportamento]
-
-## Dependências
-- [Componente X] — [motivo]
-- [Serviço Y] — [como usa]
+| ID | Requisito | Prioridade | Critério de Aceite |
+|----|-----------|-----------|-------------------|
+| RF-01 | [Descrição] | Must | [Como validar] |
+| RF-02 | [Descrição] | Should | [Como validar] |
 
 ## Requisitos Não Funcionais
 
@@ -51,11 +44,11 @@ Quando [ação inválida]
 Então [comportamento de falha esperado]
 ```
 
-## Prioridade
+## Prioridade (MoSCoW)
 
 | Requisito | MoSCoW | Justificativa |
 |-----------|--------|---------------|
-| [Responsabilidade principal] | Must | Caminho crítico — chamado em todo fluxo |
+| [Responsabilidade principal] | Must | Caminho crítico, chamado em todo fluxo |
 | [Regra de negócio central] | Must | Regra de negócio sem fallback |
 | [Funcionalidade secundária] | Should | Importante mas com alternativa |
 | [Caso de borda] | Could | Raramente acionado |

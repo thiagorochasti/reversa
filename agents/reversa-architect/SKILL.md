@@ -85,4 +85,8 @@ Crie `_reversa_sdd/traceability/spec-impact-matrix.md`: qual componente impacta 
 ## Escala de confiança
 🟢 CONFIRMADO | 🟡 INFERIDO | 🔴 LACUNA
 
+## Layout de saída (transversal)
+
+Este agente produz artefatos transversais à organização escolhida em `[specs]` do `config.toml`. Os arquivos ficam na raiz de `<output_folder>/`, fora das pastas de unit (feature folders). Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
+
 Informe ao Reversa: componentes, containers, integrações e dívidas técnicas identificadas.

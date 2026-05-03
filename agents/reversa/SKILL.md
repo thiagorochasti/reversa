@@ -61,7 +61,11 @@ Apresente ao usuário um resumo do que o Scout encontrou e as três opções de 
 
 Aguarde a resposta do usuário. Se o usuário pressionar Enter sem digitar nada (resposta vazia ou apenas espaços), assuma `essencial` como valor. Aceite também o nome por extenso: `essencial`/`completo`/`detalhado`.
 
-Após receber a resposta, salve em `.reversa/state.json` → campo `doc_level` e só então ative o Archaeologist.
+Após receber a resposta, salve em `.reversa/state.json` → campo `doc_level`.
+
+**Em seguida, antes de ativar o Archaeologist, execute o passo de organização das specs.** Leia e siga `references/step-03-specs-organization.md`. Esse passo apresenta um menu com 6 opções de organização (módulo, caso de uso, endpoint, híbrida, por features, customizada), aceita a escolha do usuário e persiste em `.reversa/config.toml`, seção `[specs]`. Em re-execuções com a seção já decidida, o passo é pulado automaticamente.
+
+Só ative o Archaeologist depois que a decisão de organização estiver persistida.
 
 **Sobre paralelismo:** executar etapas do plano sequencialmente é orquestração normal — não requer autorização. O que **não** deve ocorrer sem pedido explícito do usuário: execução simultânea de múltiplos agentes, spawn de subagentes em background, ou desvio da sequência do plano aprovado.
 

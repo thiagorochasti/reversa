@@ -65,7 +65,7 @@ O Time de Migração nunca toca em código legado nem nos artefatos do Time de D
     ├── architecture.md            (Architect)
     ├── erd-complete.md            (Architect)
     │
-    ├── sdd/                       (Writer: specs por componente)
+    ├── <unit>/                    (Writer: feature folder com requirements.md, design.md, tasks.md por unit)
     ├── openapi/                   (Writer: specs de API)
     ├── user-stories/              (Writer: fluxos de usuário)
     ├── traceability/              (Writer + Architect: matrizes)

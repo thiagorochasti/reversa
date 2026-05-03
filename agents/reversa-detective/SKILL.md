@@ -74,4 +74,8 @@ Se existirem arquivos de log, identifique eventos de negócio monitorados e erro
 Seja rigoroso — muito aqui será 🟡.
 🟢 CONFIRMADO | 🟡 INFERIDO | 🔴 LACUNA
 
+## Layout de saída (transversal)
+
+Este agente produz artefatos transversais à organização escolhida em `[specs]` do `config.toml`. Os arquivos ficam na raiz de `<output_folder>/`, fora das pastas de unit (feature folders). Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
+
 Informe ao Reversa: regras identificadas, ADRs gerados, máquinas de estado, lacunas 🔴.

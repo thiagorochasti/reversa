@@ -21,21 +21,45 @@ Las specs no son documentación para que los humanos lean en una tarde tranquila
 
 ## El flujo de trabajo
 
-El Writer nunca genera todo de una vez. Monta un plan, lo presenta para tu aprobación, y luego genera un archivo a la vez esperando tu confirmación antes de continuar. Esto permite revisión incremental.
+El Writer nunca genera todo de una vez. Lee la decisión de organización guardada en `[specs]` del `config.toml`, monta un plan con todas las units, lo presenta para tu aprobación, y luego genera un archivo a la vez esperando tu confirmación antes de continuar. Esto permite revisión incremental.
 
 ---
 
-## Formato de las specs SDD
+## Layout de salida: feature folders
 
-Cada spec sigue una plantilla fija con secciones obligatorias, incluyendo criterios de aceptación en formato `Dado / Cuando / Entonces`. Cada afirmación se marca con 🟢, 🟡 o 🔴. Sin excepciones.
+Cada unit es una carpeta dentro de `<output_folder>/`. La "unit" depende del `granularity` elegido en el paso de organización:
+
+| `granularity` | Una unit es... |
+|---------------|----------------|
+| `module` | Un módulo del legado |
+| `endpoint` | Un endpoint o contrato HTTP/RPC |
+| `use-case` | Un caso de uso comportamental |
+| `hybrid` | Módulo arriba, casos de uso anidados |
+| `feature` | Una feature listada por el Scout |
+| `custom` | Carpeta definida por el usuario |
+
+Toda carpeta de unit tiene los 3 archivos canónicos SDD: `requirements.md`, `design.md`, `tasks.md`. Archivos opcionales (`contracts.md`, `flows.md`, `edge-cases.md`, etc.) se agregan según el nivel de documentación y el contexto.
+
+Cada afirmación se marca con 🟢, 🟡 o 🔴. Sin excepciones.
 
 ---
 
-## Archivos generados
+## Archivos canónicos por unit
 
 | Archivo | Contenido |
 |---------|-----------|
-| `_reversa_sdd/sdd/[componente].md` | Spec por componente |
-| `_reversa_sdd/openapi/[api].yaml` | Spec de API (si aplica) |
-| `_reversa_sdd/user-stories/[flujo].md` | User stories (si aplica) |
-| `_reversa_sdd/traceability/code-spec-matrix.md` | Matriz código-spec |
+| `<unit>/requirements.md` | Qué hace la unit: reglas de negocio, RNFs, criterios de aceptación, MoSCoW |
+| `<unit>/design.md` | Cómo se construye la unit: interfaz, flujos, dependencias, decisiones |
+| `<unit>/tasks.md` | Tareas de implementación trazables al código legado |
+
+---
+
+## Globales transversales
+
+Quedan en la raíz de `<output_folder>/`, fuera de las carpetas de unit:
+
+| Archivo | Contenido |
+|---------|-----------|
+| `openapi/[api].yaml` | Spec de API (si aplica, sólo completo/detallado) |
+| `user-stories/[flujo].md` | User stories (sólo completo/detallado) |
+| `traceability/code-spec-matrix.md` | Matriz archivo legado → unit |

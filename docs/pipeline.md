@@ -78,18 +78,18 @@ What they produce:
 
 **Agent:** Writer
 
-The Writer is the team's notary. Transforms everything discovered in the previous phases into formal contracts: SDD specs per component, OpenAPI specs for APIs, user stories for user flows.
+The Writer is the team's notary. Transforms everything discovered in the previous phases into formal contracts: a folder per unit (module, endpoint, use case, feature, etc., depending on the organization chosen earlier in the flow) with the three canonical SDD files inside, plus cross-cutting globals such as OpenAPI specs and user stories.
 
-Every statement in the specs is marked with the [confidence scale](escala-confianca.md): 🟢 CONFIRMED, 🟡 INFERRED, or 🔴 GAP.
+Every statement is marked with the [confidence scale](escala-confianca.md): 🟢 CONFIRMED, 🟡 INFERRED, or 🔴 GAP.
 
-The Writer doesn't generate everything at once. It builds a plan, presents it for your approval, then generates one file at a time, waiting for confirmation before continuing. This allows incremental review and prevents context waste.
+The Writer doesn't generate everything at once. It builds a plan covering all units, presents it for your approval, then generates one file at a time, waiting for confirmation before continuing. This allows incremental review and prevents context waste.
 
 What it produces:
 
-- Specs per component (`sdd/[component].md`)
+- One folder per unit with `<unit>/requirements.md`, `<unit>/design.md`, `<unit>/tasks.md` (plus optionals when the doc level calls for them)
 - API specs (`openapi/[api].yaml`)
 - User stories (`user-stories/[flow].md`)
-- Code-to-spec traceability matrix (`traceability/code-spec-matrix.md`)
+- Legacy-to-unit traceability matrix (`traceability/code-spec-matrix.md`)
 
 ---
 

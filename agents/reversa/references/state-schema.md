@@ -74,3 +74,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Reversa l�
 ## Regra ao escrever
 
 Nunca remova campos existentes. Apenas adicione ou atualize.
+
+## Onde NÃO escrever
+
+A decisão de organização das specs (granularidade, pastas customizadas, sugestão original do Scout, timestamp da escolha) **não** vai no `state.json`. Ela é persistida em `.reversa/config.toml`, seção `[specs]`, conforme `references/step-03-specs-organization.md`. O `state.json` é estado runtime, o `config.toml` é decisão de longo prazo.

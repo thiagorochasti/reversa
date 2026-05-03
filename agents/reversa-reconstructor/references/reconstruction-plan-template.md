@@ -48,14 +48,14 @@ Nenhum gap crítico identificado. Pode iniciar com segurança.
 ---
 
 <!-- COMPONENT_TASKS_START -->
-<!-- O Reconstructor insere aqui uma tarefa por componente, na ordem bottom-up determinada pelo dependencies.md -->
-<!-- Exemplo de tarefa de componente: -->
+<!-- O Reconstructor insere aqui uma tarefa por unit, na ordem bottom-up determinada pelo dependencies.md -->
+<!-- Exemplo de tarefa de unit: -->
 
-### Tarefa 04 — [Nome do Componente]
+### Tarefa 04 — [Nome da Unit]
 **Status:** pending
-**Lê:** `_reversa_sdd/sdd/[componente].md`, `_reversa_sdd/dependencies.md`
+**Lê:** `_reversa_sdd/[unit]/requirements.md`, `_reversa_sdd/[unit]/design.md`, `_reversa_sdd/[unit]/tasks.md`, `_reversa_sdd/dependencies.md`
 **Constrói:** [caminho do módulo conforme stack]
-**Pronto quando:** [critério de aceitação extraído da spec — campo "Dado/Quando/Então"]
+**Pronto quando:** [critério de aceitação extraído de requirements.md, campo "Dado/Quando/Então"]
 **Alerta:** [se houver gap associado, descreva aqui]
 
 <!-- COMPONENT_TASKS_END -->

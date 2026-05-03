@@ -78,18 +78,18 @@ O que eles produzem:
 
 **Agente:** Writer
 
-O Writer é o tabelião do time. Transforma tudo que foi descoberto nas fases anteriores em contratos formais: especificações SDD por componente, specs OpenAPI para as APIs, user stories para os fluxos de usuário.
+O Writer é o tabelião do time. Transforma tudo que foi descoberto nas fases anteriores em contratos formais: uma pasta por unit (módulo, endpoint, caso de uso, feature etc., conforme a organização escolhida no início do fluxo) com os 3 arquivos canônicos SDD dentro, mais globais transversais como specs OpenAPI e user stories.
 
-Cada afirmação nas specs é marcada com a [escala de confiança](escala-confianca.md): 🟢 CONFIRMADO, 🟡 INFERIDO ou 🔴 LACUNA.
+Cada afirmação é marcada com a [escala de confiança](escala-confianca.md): 🟢 CONFIRMADO, 🟡 INFERIDO ou 🔴 LACUNA.
 
-O Writer não gera tudo de uma vez. Ele monta um plano, apresenta para você aprovar, e depois gera um arquivo por vez, esperando confirmação antes de continuar. Isso permite revisão incremental e evita desperdício de contexto.
+O Writer não gera tudo de uma vez. Ele monta um plano cobrindo todas as units, apresenta para você aprovar, e depois gera um arquivo por vez, esperando confirmação antes de continuar. Isso permite revisão incremental e evita desperdício de contexto.
 
 O que ele produz:
 
-- Specs por componente (`sdd/[componente].md`)
+- Uma pasta por unit com `<unit>/requirements.md`, `<unit>/design.md`, `<unit>/tasks.md` (mais opcionais quando o nível de documentação pede)
 - Specs de API (`openapi/[api].yaml`)
 - User stories (`user-stories/[fluxo].md`)
-- Matriz de rastreabilidade código-spec (`traceability/code-spec-matrix.md`)
+- Matriz de rastreabilidade legado-unit (`traceability/code-spec-matrix.md`)
 
 ---
 

@@ -59,4 +59,8 @@ Gere em Mermaid (`erDiagram`). Para bancos grandes, gere ERDs parciais por domí
 ## Escala de confiança
 🟢 DDL/migration direto | 🟡 Inferido de ORM/screenshots | 🔴 Inacessível
 
+## Layout de saída (transversal)
+
+Este agente produz artefatos transversais à organização escolhida em `[specs]` do `config.toml`. Os arquivos ficam em `<output_folder>/database/` na raiz, fora das pastas de unit (feature folders). Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
+
 Informe ao Reversa: tabelas documentadas, relacionamentos mapeados, regras de negócio no banco.

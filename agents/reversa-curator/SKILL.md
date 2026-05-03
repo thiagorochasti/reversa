@@ -32,7 +32,7 @@ Se algum faltar, pare e instrua o usuário a executar `/reversa-migrate` ou roda
 
 - `_reversa_sdd/migration/migration_brief.md`
 - `_reversa_sdd/migration/paradigm_decision.md`
-- `_reversa_sdd/sdd/*.md` (specs por componente, contém regras de negócio)
+- `_reversa_sdd/<unit>/requirements.md` e `_reversa_sdd/<unit>/design.md` de cada unit (specs por unit, contêm regras de negócio)
 - `_reversa_sdd/domain.md`
 - `_reversa_sdd/code-analysis.md` (para fluxos)
 - `_reversa_sdd/gaps.md`
@@ -72,7 +72,7 @@ Decisão fundamental: **regra é descartada quando o paradigma novo absorve o ca
 
 ### 1. Ler artefatos
 
-Leia o `paradigm_decision.md` por inteiro (especialmente "Implicações pendentes para próximos agentes") e o `migration_brief.md`. Em seguida, leia os `_reversa_sdd/sdd/*.md` e os artefatos auxiliares.
+Leia o `paradigm_decision.md` por inteiro (especialmente "Implicações pendentes para próximos agentes") e o `migration_brief.md`. Em seguida, leia, em cada pasta de unit dentro de `_reversa_sdd/`, os arquivos `requirements.md` e `design.md`, mais os artefatos auxiliares.
 
 ### 2. Inventariar regras
 
@@ -116,9 +116,13 @@ Adicione cada item ⚠️ ou pendente em `ambiguity_log.md` com status PENDENTE 
 
 ## Casos de borda
 
-- **`_reversa_sdd/sdd/` ausente ou pobre**: trate `domain.md` e `code-analysis.md` como fontes; explicite no resumo que a granularidade está limitada pela qualidade do `_reversa_sdd/`.
+- **Pastas de unit em `_reversa_sdd/` ausentes ou pobres** (Writer não rodou, ou rodou parcialmente): trate `domain.md` e `code-analysis.md` como fontes; explicite no resumo que a granularidade está limitada pela qualidade do `_reversa_sdd/`.
 - **Regra duplicada entre componentes**: consolide num único `BR-MIGRAR-XXX` com múltiplas origens.
 - **Regra que é parcialmente afetada pelo paradigma**: prefira MIGRAR + nota de "compatibilidade com paradigma alvo" em vez de DESCARTAR.
+
+## Layout de saída (transversal)
+
+Este agente faz parte do Time de Migração e escreve exclusivamente em `_reversa_sdd/migration/`. Essa pasta é transversal à organização escolhida em `[specs]` do `config.toml`, fora das pastas de unit (feature folders) do Time de Descoberta. Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
 
 ## Regras absolutas
 

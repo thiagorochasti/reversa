@@ -19,20 +19,20 @@ Start by reading these three files:
 ## Implementation order (bottom-up)
 
 ```
-1. database/  +  erd-complete.md       (data structures, migrations)
-2. domain.md  +  sdd/[core-entities]   (core business rules)
-3. sdd/[services] sorted by dependency (use dependencies.md as a guide)
-4. openapi/   +  API contracts         (if present)
-5. ui/                                 (presentation layer last)
+1. database/  +  erd-complete.md             (data structures, migrations)
+2. domain.md  +  <unit>/ for core entities   (core business rules: read requirements.md, design.md, tasks.md of each)
+3. <unit>/ for services sorted by dependency (use dependencies.md as a guide)
+4. openapi/   +  API contracts               (if present)
+5. ui/                                       (presentation layer last)
 ```
 
 ---
 
-## Which sdd/ spec comes first
+## Which unit comes first
 
-Open `_reversa_sdd/traceability/code-spec-matrix.md`. It lists each spec and its dependencies.
+Open `_reversa_sdd/traceability/code-spec-matrix.md`. It lists each unit and its dependencies.
 
-Implement the specs that depend on nothing else first (leaf nodes in the dependency tree), then work up toward the specs that integrate multiple components.
+Implement the units that depend on nothing else first (leaf nodes in the dependency tree), then work up toward the units that integrate multiple components.
 
 ---
 

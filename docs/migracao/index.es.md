@@ -65,7 +65,7 @@ El Equipo de Migración nunca toca código legado ni los artefactos del Equipo d
     ├── architecture.md            (Architect)
     ├── erd-complete.md            (Architect)
     │
-    ├── sdd/                       (Writer: specs por componente)
+    ├── <unit>/                    (Writer: feature folder con requirements.md, design.md, tasks.md por unit)
     ├── openapi/                   (Writer: specs de API)
     ├── user-stories/              (Writer: flujos de usuario)
     ├── traceability/              (Writer + Architect: matrices)

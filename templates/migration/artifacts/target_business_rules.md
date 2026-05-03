@@ -22,7 +22,7 @@ hash: "sha256:<hash do corpo abaixo do front-matter>"
 ## Regras MIGRAR
 
 ### BR-MIGRAR-001
-- **Origem**: `_reversa_sdd/sdd/<componente>.md` § <seção>
+- **Origem**: `_reversa_sdd/<unit>/{requirements,design}.md` § <seção>
 - **Confiança original**: 🟢 | 🟡 | 🔴 | ⚠️
 - **Descrição**: <regra>
 - **Justificativa de migração**: <por que migra>

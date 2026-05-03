@@ -177,6 +177,10 @@ Sempre exibir aviso explícito antes de iniciar listando todos os defaults aplic
 - **Falha de LLM no meio do agente**: estado preservado, agente marcado como `failed`. `--resume` reexecuta esse agente.
 - **Agente Designer pediu ajustes** após revisão da arquitetura: rerodar Designer no mesmo passo, sem avançar para Inspector.
 
+## Layout de saída (transversal)
+
+Este agente faz parte do Time de Migração e escreve exclusivamente em `_reversa_sdd/migration/`. Essa pasta é transversal à organização escolhida em `[specs]` do `config.toml`, fora das pastas de unit (feature folders) do Time de Descoberta. Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
+
 ## Regras absolutas
 
 - **Não modificar nada fora de `_reversa_sdd/migration/`.**

@@ -25,59 +25,76 @@ The Writer never generates everything at once. Large projects have many componen
 
 ### 1. Build and present the plan
 
-Before generating any file, the Writer reads all artifacts from previous phases and builds a complete list of what it will generate:
+Before generating any file, the Writer reads all artifacts from previous phases and the organization decision saved in `[specs]` of `config.toml`. It then builds a complete list of what it will generate:
 
 ```
-📋 Generation plan: 12 items
+📋 Generation plan: 3 units, 11 files total
 
-SDD:
-  [ ] 1. sdd/auth.md
-  [ ] 2. sdd/orders.md
-  [ ] 3. sdd/payments.md
+Units:
+  [ ] 1. auth/requirements.md
+  [ ] 2. auth/design.md
+  [ ] 3. auth/tasks.md
+  [ ] 4. orders/requirements.md
+  [ ] 5. orders/design.md
+  [ ] 6. orders/tasks.md
+  [ ] 7. payments/requirements.md
+  [ ] 8. payments/design.md
+  [ ] 9. payments/tasks.md
 
-OpenAPI:
-  [ ] 4. openapi/api-v1.yaml
-
-User Stories:
-  [ ] 5. user-stories/checkout.md
-
-Traceability:
-  [ ] 6. traceability/code-spec-matrix.md
+Globals:
+  [ ] 10. openapi/api-v1.yaml
+  [ ] 11. traceability/code-spec-matrix.md
 
 Type CONTINUE to start.
 ```
 
 You approve (or adjust) the plan before any generation begins.
 
-### 2. Generate one item at a time
+### 2. Generate one file at a time
 
 For each item: generates the file, saves it, reports what was completed and what comes next, and **stops**. You confirm "CONTINUE" before the next one. This allows you to review each spec before moving on.
 
-### 3. Code/Spec Matrix last
+### 3. Globals last
 
-The last item is always the traceability matrix: which code file corresponds to which spec, with the coverage level of each.
+After all unit files are generated, globals come in order: `openapi/`, `user-stories/`, and finally the code-spec matrix that ties each legacy file to a unit with its coverage level.
 
 ---
 
-## SDD spec format
+## Output layout: feature folders
 
-Each spec follows a fixed template with required sections:
+Each unit becomes a folder under `<output_folder>/`. The "unit" depends on the `granularity` chosen during the organization step (right after the documentation level question):
 
-- **Overview** of the component
-- **Responsibilities** with MoSCoW classification (Must / Should / Could / Won't)
-- **Flows** and documented business rules
-- **Non-functional requirements** (inferred from code, not invented)
-- **Acceptance criteria** in `Given / When / Then` format, with happy path and failure scenarios
+| `granularity` | A unit is... |
+|---------------|--------------|
+| `module` | A legacy module |
+| `endpoint` | An HTTP/RPC endpoint or contract |
+| `use-case` | A behavioral use case |
+| `hybrid` | Module at top, use cases nested inside |
+| `feature` | A feature listed by Scout |
+| `custom` | A folder defined by the user |
+
+Every unit folder has the three canonical SDD files: `requirements.md`, `design.md`, `tasks.md`. Optional files (`contracts.md`, `flows.md`, `edge-cases.md`, `decisions.md`, `legacy-mapping.md`, `questions.md`) are added when the doc level and context call for them.
+
+---
+
+## Canonical files per unit
+
+| File | Content |
+|------|---------|
+| `<unit>/requirements.md` | What the unit does: business rules, NFRs, acceptance criteria, MoSCoW |
+| `<unit>/design.md` | How the unit is built: interface, flows, dependencies, design decisions |
+| `<unit>/tasks.md` | Implementation tasks traceable to the legacy code, with done criteria and confidence |
 
 Every statement is marked with 🟢, 🟡, or 🔴. No exceptions.
 
 ---
 
-## Generated files
+## Cross-cutting globals
+
+These stay at the root of `<output_folder>/`, outside the unit folders:
 
 | File | Content |
 |------|---------|
-| `_reversa_sdd/sdd/[component].md` | Spec per component |
-| `_reversa_sdd/openapi/[api].yaml` | API spec (if applicable) |
-| `_reversa_sdd/user-stories/[flow].md` | User stories (if applicable) |
-| `_reversa_sdd/traceability/code-spec-matrix.md` | Code-to-spec matrix |
+| `openapi/[api].yaml` | API spec (if applicable, complete/detailed only) |
+| `user-stories/[flow].md` | User stories (complete/detailed only) |
+| `traceability/code-spec-matrix.md` | Legacy file → unit coverage matrix |

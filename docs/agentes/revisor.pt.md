@@ -31,19 +31,21 @@ Se o Codex não estiver disponível, o Reviewer segue normalmente sem mencionar 
 
 ## O processo de revisão
 
-### Revisão por spec
+### Revisão por unit
 
-Para cada spec em `_reversa_sdd/sdd/`:
+Para cada pasta de unit em `<output_folder>/`:
 
-- As regras fazem sentido em conjunto? Há contradições internas?
+- Os 3 arquivos canônicos estão presentes (`requirements.md`, `design.md`, `tasks.md`)? Se faltar algum, é uma lacuna.
+- As regras em `requirements.md` fazem sentido em conjunto? Há contradições internas?
+- O `design.md` cobre o que `requirements.md` promete? E o `tasks.md` cobre os dois?
 - Há comportamentos óbvios não especificados?
 - Afirmações marcadas como 🟢: o Reviewer volta ao código original para checar. Reclassifica se necessário.
 
-### Revisão cruzada entre specs
+### Revisão cruzada entre units
 
-- Specs que conflitam entre si
+- Units que conflitam entre si
 - Dependências declaradas que não batem com as reais no código
-- Specs que deveriam existir mas não foram geradas
+- Units que deveriam existir mas não foram geradas (comparar com o `surface.json` do Scout)
 
 ### Validação das matrizes
 
@@ -69,4 +71,4 @@ Para cada lacuna 🔴 que só um humano que conhece o negócio pode resolver, o 
 | `_reversa_sdd/gaps.md` | Lacunas que ficaram sem resposta |
 | `_reversa_sdd/cross-review-result.md` | Apontamentos do Codex (se revisão cruzada solicitada) |
 
-Specs em `_reversa_sdd/sdd/` são atualizadas in-place com as reclassificações.
+Specs em cada pasta de unit dentro de `<output_folder>/` são atualizadas in-place com as reclassificações. Os artefatos próprios do Reviewer (`questions.md`, `confidence-report.md`, `gaps.md`, `cross-review-result.md`) ficam na raiz, fora das pastas de unit.

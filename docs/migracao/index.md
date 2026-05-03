@@ -65,7 +65,7 @@ The Migration Team never touches legacy code or Discovery Team artifacts. Every 
     ├── architecture.md            (Architect)
     ├── erd-complete.md            (Architect)
     │
-    ├── sdd/                       (Writer: specs per component)
+    ├── <unit>/                    (Writer: feature folder with requirements.md, design.md, tasks.md per unit)
     ├── openapi/                   (Writer: API specs)
     ├── user-stories/              (Writer: user flows)
     ├── traceability/              (Writer + Architect: matrices)

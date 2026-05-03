@@ -31,19 +31,21 @@ If Codex is not available, the Reviewer proceeds normally without mentioning it.
 
 ## The review process
 
-### Per-spec review
+### Per-unit review
 
-For each spec in `_reversa_sdd/sdd/`:
+For each unit folder under `<output_folder>/`:
 
-- Do the rules make sense together? Are there internal contradictions?
+- Are the 3 canonical files present (`requirements.md`, `design.md`, `tasks.md`)? If not, that's a gap.
+- Do the rules in `requirements.md` make sense together? Are there internal contradictions?
+- Does `design.md` cover what `requirements.md` promises? Does `tasks.md` cover both?
 - Are there obvious unspecified behaviors?
 - Statements marked as 🟢: the Reviewer goes back to the original code to check. Reclassifies if necessary.
 
-### Cross-spec review
+### Cross-unit review
 
-- Specs that conflict with each other
+- Units that conflict with each other
 - Declared dependencies that don't match the real ones in the code
-- Specs that should exist but weren't generated
+- Units that should exist but weren't generated (compare with Scout's `surface.json`)
 
 ### Matrix validation
 
@@ -69,4 +71,4 @@ For each 🔴 gap that only a human who knows the business can resolve, the Revi
 | `_reversa_sdd/gaps.md` | Gaps that remained unanswered |
 | `_reversa_sdd/cross-review-result.md` | Codex findings (if cross-review was requested) |
 
-Specs in `_reversa_sdd/sdd/` are updated in-place with the reclassifications.
+Specs in each unit folder under `<output_folder>/` are updated in-place with the reclassifications. The Reviewer's own outputs (`questions.md`, `confidence-report.md`, `gaps.md`, `cross-review-result.md`) stay at the root, outside the unit folders.

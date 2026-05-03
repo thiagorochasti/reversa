@@ -19,20 +19,20 @@ Comienza leyendo estos tres archivos:
 ## Orden de implementación (bottom-up)
 
 ```
-1. database/  +  erd-complete.md             (estructuras de datos, migraciones)
-2. domain.md  +  sdd/[entidades-core]        (reglas de negocio centrales)
-3. sdd/[servicios] ordenados por dependencia (usa dependencies.md como guía)
-4. openapi/   +  contratos de API            (si existen)
-5. ui/                                       (capa de presentación al final)
+1. database/  +  erd-complete.md                  (estructuras de datos, migraciones)
+2. domain.md  +  <unit>/ de las entidades core    (reglas de negocio centrales: lee requirements.md, design.md, tasks.md de cada unit)
+3. <unit>/ de los servicios ordenados por dependencia (usa dependencies.md como guía)
+4. openapi/   +  contratos de API                 (si existen)
+5. ui/                                            (capa de presentación al final)
 ```
 
 ---
 
-## Qué sdd/ va primero
+## Qué unit va primero
 
-Abre `_reversa_sdd/traceability/code-spec-matrix.md`. Listá cada spec y sus dependencias.
+Abre `_reversa_sdd/traceability/code-spec-matrix.md`. Lista cada unit y sus dependencias.
 
-Implementa primero los specs que no dependen de ningún otro (hojas del árbol de dependencias), y sube hacia los specs que integran múltiples componentes.
+Implementa primero las units que no dependen de ninguna otra (hojas del árbol de dependencias), y sube hacia las units que integran múltiples componentes.
 
 ---
 

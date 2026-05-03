@@ -12,6 +12,10 @@
 - [ ] **Scout** — Análise de dependências e gerenciadores de pacotes
 - [ ] **Scout** — Identificação de entry points, CI/CD e configurações
 
+## Decisão de organização das specs 🗂️
+
+> Entre o Scout e o Arqueólogo, o Reversa pergunta como você quer organizar as specs (por módulo, caso de uso, endpoint, híbrida, por features ou customizada). A escolha fica persistida em `.reversa/config.toml` na seção `[specs]` e não será reperguntada em execuções futuras. Para reapresentar o menu, remova manualmente a seção.
+
 ## Fase 2: Escavação 🏗️
 
 > O Reversa preenche esta seção com os módulos reais após o Scout concluir o reconhecimento.

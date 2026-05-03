@@ -51,23 +51,23 @@ Leia APENAS estes arquivos (nesta ordem):
 5. `_reversa_sdd/dependencies.md`
 6. `_reversa_sdd/traceability/code-spec-matrix.md` — se existir
 
-Não leia o conteúdo de arquivos em `sdd/`, `openapi/` ou `user-stories/` agora. Apenas identifique quais existem a partir do `code-spec-matrix.md` ou do `dependencies.md`.
+Não leia o conteúdo dos arquivos das pastas de unit (`<unit>/requirements.md`, `design.md`, `tasks.md`), nem de `openapi/` ou `user-stories/` agora. Apenas liste as units existentes (subpastas de `_reversa_sdd/` que contenham os 3 arquivos canônicos) a partir do `code-spec-matrix.md` ou do `dependencies.md`.
 
 ### Como determinar a ordem das tarefas
 
-A partir do `dependencies.md`, identifique a árvore de dependências dos componentes:
-- Componentes sem dependências (folhas da árvore) devem ser implementados primeiro
-- Componentes que dependem de outros vêm após suas dependências
+A partir do `dependencies.md`, identifique a árvore de dependências entre as units:
+- Units sem dependências (folhas da árvore) devem ser implementadas primeiro
+- Units que dependem de outras vêm após suas dependências
 - Infraestrutura (banco, cache, filas) sempre antes do domínio
 
 Ordem canônica bottom-up:
 
 ```
-1. Schema do banco de dados      → erd-complete.md + data-dictionary.md
+1. Schema do banco de dados      → database/erd.md + database/data-dictionary.md
 2. Entidades de domínio          → domain.md
 3. Máquinas de estado            → state-machines.md (se existir)
-4. Componentes folha             → sdd/componente.md (um por tarefa, sem dependentes)
-5. Componentes intermediários    → sdd/componente.md (ordem da árvore)
+4. Units folha                   → <unit>/{requirements,design,tasks}.md (uma por tarefa, sem dependentes)
+5. Units intermediárias          → <unit>/{requirements,design,tasks}.md (ordem da árvore)
 6. Camada de API                 → openapi/
 7. Fluxos de usuário             → user-stories/
 ```
@@ -81,10 +81,10 @@ A partir de `gaps.md` e `confidence-report.md`, identifique gaps 🔴 que bloque
 Gere `_reversa_sdd/reconstruction-plan.md` seguindo o template em `references/reconstruction-plan-template.md`.
 
 Regras de geração:
-- Cada componente identificado no `code-spec-matrix.md` vira uma tarefa própria
-- O campo `Lê:` de cada tarefa lista exatamente os arquivos que serão lidos na execução
-- O campo `Pronto quando:` é derivado dos critérios de aceitação da spec (se disponíveis) ou do tipo do componente
-- Tarefas sem arquivo de spec correspondente listam `dependencies.md` como referência
+- Cada unit identificada (subpasta de `<output_folder>/` com os 3 arquivos canônicos) vira uma tarefa própria
+- O campo `Lê:` de cada tarefa lista exatamente os arquivos que serão lidos na execução, tipicamente `<unit>/requirements.md`, `<unit>/design.md` e `<unit>/tasks.md` mais opcionais aplicáveis
+- O campo `Pronto quando:` é derivado dos critérios de aceitação em `<unit>/requirements.md` (se disponíveis) ou do tipo da unit
+- Units sem `tasks.md` listam `dependencies.md` como referência
 
 Após gerar, apresente ao usuário:
 

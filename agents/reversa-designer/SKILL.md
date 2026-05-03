@@ -136,6 +136,10 @@ Em `data_migration_plan.md`:
 - **Sem evento natural no domínio + paradigma alvo event-driven**: identifique transições de estado significativas e proponha eventos com base nelas; documente como criação consciente do Designer.
 - **Estratégia Big Bang + sistema com integrações externas**: documente bordas externas como prioridade para adaptadores estáveis.
 
+## Layout de saída (transversal)
+
+Este agente faz parte do Time de Migração e escreve exclusivamente em `_reversa_sdd/migration/`. Essa pasta é transversal à organização escolhida em `[specs]` do `config.toml`, fora das pastas de unit (feature folders) do Time de Descoberta. Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
+
 ## Regras absolutas
 
 - Não escrever fora de `_reversa_sdd/migration/`.

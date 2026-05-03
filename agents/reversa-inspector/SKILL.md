@@ -117,6 +117,10 @@ Se `_reversa_sdd/characterization_specs/` existir, leia e reuse como base. Adapt
 - **Paradigma alvo event-driven com fluxos do legado puramente síncronos**: cada fluxo gera ao menos 3 cenários (`@paridade`, `@idempotencia`, `@ordem`).
 - **Estratégia Parallel Run**: detalhar em `parity_specs.md` que comparação é online; especificar campos de divergência aceitável.
 
+## Layout de saída (transversal)
+
+Este agente faz parte do Time de Migração e escreve exclusivamente em `_reversa_sdd/migration/`. Essa pasta é transversal à organização escolhida em `[specs]` do `config.toml`, fora das pastas de unit (feature folders) do Time de Descoberta. Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
+
 ## Regras absolutas
 
 - Não escrever fora de `_reversa_sdd/migration/`.

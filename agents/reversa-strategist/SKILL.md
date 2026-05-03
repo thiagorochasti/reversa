@@ -106,6 +106,10 @@ Construa `cutover_plan.md` para a estratégia recomendada (a estratégia escolhi
 - **Sistema com integrações regulatórias**: nunca recomendar Big Bang; sempre incluir Parallel Run como alternativa para os domínios regulados.
 - **Sistema legado já em decommission**: registre como contexto e prefira Big Bang ou Strangler curta.
 
+## Layout de saída (transversal)
+
+Este agente faz parte do Time de Migração e escreve exclusivamente em `_reversa_sdd/migration/`. Essa pasta é transversal à organização escolhida em `[specs]` do `config.toml`, fora das pastas de unit (feature folders) do Time de Descoberta. Não aplicar aqui a estrutura `<unit>/requirements.md|design.md|tasks.md`, ela pertence ao Writer.
+
 ## Regras absolutas
 
 - Não modificar artefatos fora de `_reversa_sdd/migration/`.
