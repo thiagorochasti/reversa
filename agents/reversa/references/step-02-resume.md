@@ -36,8 +36,10 @@ Se `answer_mode` for `"chat"` (padrão):
 
 ## 6. Confirmação
 
-Pergunte: "Continuamos de onde paramos?"
+Pergunte apenas: "Continuamos de onde paramos? (CONTINUAR para seguir)"
 
 Após confirmação, retome a próxima tarefa pendente no plano (`.reversa/plan.md`).
+
+**🚫 Não ofereça `/clear` + `/reversa` neste momento.** O usuário acabou de retomar a sessão; pedir para limpar e reabrir agora é redundante. O prompt de pausa entre etapas (descrito em `SKILL.md`, seção "Checkpoint preventivo entre etapas") só vale **depois** que um agente concluir trabalho dentro desta sessão, nunca na própria saudação de retomada.
 
 Consulte `references/checkpoint-guide.md` para as regras de escrita no state.json.
