@@ -30,7 +30,7 @@ Formato esperado:
 ### `install`
 
 ```bash
-npx reversa install
+npx github:thiagorochasti/reversa install
 ```
 
 Instala Reversa en el proyecto heredado actual. Detecta los motores presentes, pregunta tus preferencias y crea toda la estructura necesaria.

@@ -13,7 +13,7 @@ Si no tienes Node.js, instálalo en [nodejs.org](https://nodejs.org) y vuelve aq
 En la raíz del proyecto heredado que quieres analizar:
 
 ```bash
-npx reversa install
+npx github:thiagorochasti/reversa install
 ```
 
 El instalador hace todo esto por ti:

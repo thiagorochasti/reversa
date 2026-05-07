@@ -13,7 +13,7 @@ Se você não tem Node.js, instale em [nodejs.org](https://nodejs.org) e volte a
 Na raiz do projeto legado que você quer analisar:
 
 ```bash
-npx reversa install
+npx github:thiagorochasti/reversa install
 ```
 
 O instalador faz tudo isso pra você:

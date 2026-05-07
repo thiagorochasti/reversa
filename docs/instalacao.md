@@ -13,7 +13,7 @@ If you don't have Node.js, install it at [nodejs.org](https://nodejs.org) and co
 In the root of the legacy project you want to analyze:
 
 ```bash
-npx reversa install
+npx github:thiagorochasti/reversa install
 ```
 
 The installer does all of this for you:

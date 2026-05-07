@@ -1,11 +1,10 @@
 # Reversa 
-<small>by sandeco</small>
+<small>fork by thiagorochasti — original by thiagorochasti (fork)</small>
 
 **Turn legacy systems into executable specifications for AI agents.**
 
-[![English Docs](https://img.shields.io/badge/DOCS-English-009c3b?style=for-the-badge&logo=material-for-mkdocs&logoColor=white&labelColor=2d2d2d)](https://sandeco.github.io/reversa/)<br>
-[![Português Docs](https://img.shields.io/badge/DOCS-Portugu%C3%AAs-ffcc00?style=for-the-badge&logo=material-for-mkdocs&logoColor=black&labelColor=2d2d2d)](https://sandeco.github.io/reversa/pt/)<br>
-[![Español Docs](https://img.shields.io/badge/DOCS-Espa%C3%B1ol-c60b1e?style=for-the-badge&logo=material-for-mkdocs&logoColor=white&labelColor=2d2d2d)](https://sandeco.github.io/reversa/es/)
+[![Fork](https://img.shields.io/badge/FORK-thiagorochasti-ff69b4?style=for-the-badge&logo=github&logoColor=white&labelColor=2d2d2d)](https://github.com/thiagorochasti/reversa)<br>
+[![Original](https://img.shields.io/badge/ORIGINAL-sandeco-009c3b?style=for-the-badge&logo=github&logoColor=white&labelColor=2d2d2d)](https://github.com/thiagorochasti/reversa)
 
 Reversa is a specification reverse-engineering framework. Install it inside a legacy project and it coordinates a team of specialized AI agents to analyze the existing code and generate complete, traceable specifications ready for use by any coding agent.
 
@@ -30,7 +29,14 @@ The result is not documentation for humans to read. These are **operational cont
 In the root of the legacy project:
 
 ```bash
-npx reversa install
+npx github:thiagorochasti/reversa install
+```
+
+Or install globally from the fork:
+
+```bash
+npm install -g github:thiagorochasti/reversa
+npx github:thiagorochasti/reversa install
 ```
 
 The installer will:
@@ -210,15 +216,15 @@ Every statement in the specs is marked with:
 ## CLI commands
 
 ```bash
-npx reversa install         # Install Reversa in the project
-npx reversa status          # Show current analysis state
-npx reversa update          # Update agents to the latest version
-npx reversa add-agent       # Add an agent to the project
-npx reversa add-engine      # Add support for a new engine
-npx reversa uninstall       # Remove Reversa from the project
-npx reversa hash            # Calculate file hashes for cache
-npx reversa export          # Export specs to JSON/YAML
-                            # Options: --format=json|yaml --output=<file>
+npx github:thiagorochasti/reversa install     # Install Reversa in the project
+npx reversa status                            # Show current analysis state
+npx reversa update                            # Update agents to the latest version
+npx reversa add-agent                         # Add an agent to the project
+npx reversa add-engine                        # Add support for a new engine
+npx reversa uninstall                         # Remove Reversa from the project
+npx reversa hash                              # Calculate file hashes for cache
+npx reversa export                            # Export specs to JSON/YAML
+                                              # Options: --format=json|yaml --output=<file>
 ```
 
 The `update` command detects files you modified via SHA-256 and never overwrites customizations.
