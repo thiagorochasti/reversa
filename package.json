@@ -15,6 +15,7 @@
     "codex",
     "gemini",
     "cursor",
+    "kimi",
     "agents"
   ],
   "files": [
@@ -29,11 +30,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sandeco/reversa.git"
+    "url": "git+https://github.com/thiagorochasti/reversa.git"
   },
-  "homepage": "https://github.com/sandeco/reversa",
+  "homepage": "https://github.com/thiagorochasti/reversa",
   "bugs": {
-    "url": "https://github.com/sandeco/reversa/issues"
+    "url": "https://github.com/thiagorochasti/reversa/issues"
   },
   "engines": {
     "node": ">=18.0.0"

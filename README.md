@@ -34,7 +34,7 @@ npx reversa install
 ```
 
 The installer will:
-1. Detect the AI engines present in the environment (Claude Code, Codex, Cursor, etc.)
+1. Detect the AI engines present in the environment (Claude Code, Codex, Cursor, Kimi, etc.)
 2. Ask which agents to install — all selected by default
 3. Collect project name, language, and preferences
 4. Copy agents to `.agents/skills/` (and `.claude/skills/` for Claude Code)
@@ -66,7 +66,7 @@ The installer will:
 > If something unexpected happens during analysis, you can restore the original state with `git restore .` or from the backup copy.
 
 > [!WARNING]
-> 🔑 **Reversa does not request, store, or transmit API keys from any LLM service.** All intelligence is delegated to the AI agent already present in your environment (Claude Code, Codex, Cursor, etc.) — no external authentication dependencies.
+> 🔑 **Reversa does not request, store, or transmit API keys from any LLM service.** All intelligence is delegated to the AI agent already present in your environment (Claude Code, Codex, Cursor, Kimi, etc.) — no external authentication dependencies.
 
 ---
 
@@ -200,6 +200,7 @@ Every statement in the specs is marked with:
 | GitHub Copilot | `.github/copilot-instructions.md` | `.agents/skills/reversa-*/` | `/reversa` |
 | Aider | `CONVENTIONS.md` | `.agents/skills/reversa-*/` | `reversa` |
 | Amazon Q Developer | `.amazonq/rules/reversa.md` | `.agents/skills/reversa-*/` | `/reversa` |
+| Kimi Code CLI | `KIMI.md` | `.kimi/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/skill:reversa` |
 
 ---
 
@@ -246,7 +247,7 @@ The `uninstall` command removes only files created by Reversa — nothing from t
 Contributions are welcome. Open an issue to discuss before submitting a PR.
 
 ```bash
-git clone https://github.com/sandeco/reversa.git
+git clone https://github.com/thiagorochasti/reversa.git
 cd reversa
 npm install
 ```

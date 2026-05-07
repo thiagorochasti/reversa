@@ -21,6 +21,7 @@ O Reversa funciona com as principais engines de IA do mercado. O instalador dete
 | **GitHub Copilot** | `.github/copilot-instructions.md` | `.agents/skills/reversa-*/` | `/reversa` |
 | **Aider** | `CONVENTIONS.md` | `.agents/skills/reversa-*/` | `reversa` |
 | **Amazon Q Developer** | `.amazonq/rules/reversa.md` | `.agents/skills/reversa-*/` | `/reversa` |
+| **Kimi Code CLI** | `KIMI.md` | `.kimi/skills/reversa-*/` e `.agents/skills/reversa-*/` | `/skill:reversa` |
 
 ---
 
@@ -87,6 +88,14 @@ Agente de codificação para terminal. O entry file `CONVENTIONS.md` na raiz é 
 ## Amazon Q Developer
 
 CLI de IA da AWS. Usa regras em `.amazonq/rules/` para instruir o agente por projeto. O instalador cria `.amazonq/rules/reversa.md` sem interferir em outras regras que você já tenha nessa pasta.
+
+---
+
+---
+
+## Kimi Code CLI
+
+Kimi (Moonshot AI) descobre skills em `.kimi/skills/` (nível de projeto) e `~/.kimi/skills/` (nível de usuário). Também lê o diretório genérico `.agents/skills/` quando `merge_all_available_skills` está habilitado (padrão). A ativação é via o slash command `/skill:reversa` ou `/flow:reversa` se um flow skill estiver definido. O arquivo de entrada `KIMI.md` na raiz do projeto contém instruções de início rápido.
 
 ---
 
