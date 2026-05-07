@@ -201,6 +201,7 @@ Every statement in the specs is marked with:
 | Aider | `CONVENTIONS.md` | `.agents/skills/reversa-*/` | `reversa` |
 | Amazon Q Developer | `.amazonq/rules/reversa.md` | `.agents/skills/reversa-*/` | `/reversa` |
 | Kimi Code CLI | `KIMI.md` | `.kimi/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/skill:reversa` |
+| OpenClaude | `OPENCLAUDE.md` | `.claude/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/reversa` |
 
 ---
 

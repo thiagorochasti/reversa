@@ -22,6 +22,7 @@ Reversa works with the leading AI engines on the market. The installer automatic
 | **Aider** | `CONVENTIONS.md` | `.agents/skills/reversa-*/` | `reversa` |
 | **Amazon Q Developer** | `.amazonq/rules/reversa.md` | `.agents/skills/reversa-*/` | `/reversa` |
 | **Kimi Code CLI** | `KIMI.md` | `.kimi/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/skill:reversa` |
+| **OpenClaude** | `OPENCLAUDE.md` | `.claude/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/reversa` |
 
 ---
 
@@ -96,6 +97,12 @@ AWS AI CLI. Uses rules in `.amazonq/rules/` to instruct the agent per project. T
 ## Kimi Code CLI
 
 Kimi (Moonshot AI) discovers skills in `.kimi/skills/` (project-level) and `~/.kimi/skills/` (user-level). It also reads the generic `.agents/skills/` directory when `merge_all_available_skills` is enabled (default). Activation is via the slash command `/skill:reversa` or `/flow:reversa` if a flow skill is defined. The entry file `KIMI.md` at the project root contains quick-start instructions.
+
+---
+
+## OpenClaude
+
+Open-source coding-agent CLI compatible with Claude Code workflows. Supports multiple providers (OpenAI, Gemini, DeepSeek, Ollama, etc.) while maintaining the same skill system as Claude Code. Reversa creates `OPENCLAUDE.md` as the entry file and installs skills to `.claude/skills/` (since OpenClaude is fully compatible with Claude Code's skill directory structure). Activation is via `/reversa`.
 
 ---
 
