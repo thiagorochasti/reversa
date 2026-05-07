@@ -19,6 +19,8 @@ const commands = {
   'add-agent':        () => import('../lib/commands/add-agent.js'),
   'add-engine':       () => import('../lib/commands/add-engine.js'),
   'export-diagrams':  () => import('../lib/commands/export-diagrams.js'),
+  hash:               () => import('../lib/commands/hash.js'),
+  export:             () => import('../lib/commands/export.js'),
 };
 
 if (!command || command === '--help' || command === '-h') {
@@ -39,8 +41,11 @@ if (!command || command === '--help' || command === '-h') {
     export-diagrams    Exporta diagramas Mermaid como imagens SVG/PNG
                        Opções: --format=svg|png  --output=<pasta>
                        Requer: npm install -g @mermaid-js/mermaid-cli
+    hash               Calcula hashes dos arquivos do projeto para cache
+    export             Exporta specs para JSON ou YAML
+                       Opções: --format=json|yaml  --output=<arquivo>
 
-  Documentação: https://github.com/sandeco/reversa
+  Documentação: https://github.com/thiagorochasti/reversa
   `);
   process.exit(0);
 }

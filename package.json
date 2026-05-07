@@ -17,6 +17,8 @@
     "cursor",
     "kimi",
     "openclaude",
+    "deepseek",
+    "qwen",
     "agents"
   ],
   "files": [
@@ -44,6 +46,7 @@
     "chalk": "^5.3.0",
     "inquirer": "^9.2.0",
     "ora": "^7.0.1",
-    "semver": "^7.6.0"
+    "semver": "^7.6.0",
+    "yaml": "^2.8.4"
   }
 }

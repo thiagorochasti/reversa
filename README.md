@@ -202,18 +202,23 @@ Every statement in the specs is marked with:
 | Amazon Q Developer | `.amazonq/rules/reversa.md` | `.agents/skills/reversa-*/` | `/reversa` |
 | Kimi Code CLI | `KIMI.md` | `.kimi/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/skill:reversa` |
 | OpenClaude | `OPENCLAUDE.md` | `.claude/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/reversa` |
+| DeepSeek | `DEEPSEEK.md` | `.agents/skills/reversa-*/` | `reversa` |
+| Qwen | `QWEN.md` | `.agents/skills/reversa-*/` | `reversa` |
 
 ---
 
 ## CLI commands
 
 ```bash
-npx reversa install      # Install Reversa in the project
-npx reversa status       # Show current analysis state
-npx reversa update       # Update agents to the latest version
-npx reversa add-agent    # Add an agent to the project
-npx reversa add-engine   # Add support for a new engine
-npx reversa uninstall    # Remove Reversa from the project
+npx reversa install         # Install Reversa in the project
+npx reversa status          # Show current analysis state
+npx reversa update          # Update agents to the latest version
+npx reversa add-agent       # Add an agent to the project
+npx reversa add-engine      # Add support for a new engine
+npx reversa uninstall       # Remove Reversa from the project
+npx reversa hash            # Calculate file hashes for cache
+npx reversa export          # Export specs to JSON/YAML
+                            # Options: --format=json|yaml --output=<file>
 ```
 
 The `update` command detects files you modified via SHA-256 and never overwrites customizations.

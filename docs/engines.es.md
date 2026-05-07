@@ -23,6 +23,8 @@ Reversa funciona con los principales motores de IA del mercado. El instalador de
 | **Amazon Q Developer** | `.amazonq/rules/reversa.md` | `.agents/skills/reversa-*/` | `/reversa` |
 | **Kimi Code CLI** | `KIMI.md` | `.kimi/skills/reversa-*/` y `.agents/skills/reversa-*/` | `/skill:reversa` |
 | **OpenClaude** | `OPENCLAUDE.md` | `.claude/skills/reversa-*/` y `.agents/skills/reversa-*/` | `/reversa` |
+| **DeepSeek** | `DEEPSEEK.md` | `.agents/skills/reversa-*/` | `reversa` |
+| **Qwen** | `QWEN.md` | `.agents/skills/reversa-*/` | `reversa` |
 
 ---
 
@@ -103,6 +105,18 @@ Kimi (Moonshot AI) descubre skills en `.kimi/skills/` (nivel de proyecto) y `~/.
 ## OpenClaude
 
 CLI open-source de coding-agent compatible con workflows de Claude Code. Soporta múltiples providers (OpenAI, Gemini, DeepSeek, Ollama, etc.) manteniendo el mismo sistema de skills de Claude Code. Reversa crea `OPENCLAUDE.md` como archivo de entrada e instala skills en `.claude/skills/` (ya que OpenClaude es totalmente compatible con la estructura de directorios de skills de Claude Code). Activación vía `/reversa`.
+
+---
+
+## DeepSeek
+
+Modelos DeepSeek vía CLI o integración API. Reversa crea `DEEPSEEK.md` como archivo de entrada. Skills instalados en `.agents/skills/` (grupo genérico). Activación por nombre del agente: `reversa`.
+
+---
+
+## Qwen
+
+Modelos Qwen vía CLI o integración API. Reversa crea `QWEN.md` como archivo de entrada. Skills instalados en `.agents/skills/` (grupo genérico). Activación por nombre del agente: `reversa`.
 
 ---
 
