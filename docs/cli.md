@@ -8,7 +8,20 @@ Reversa has a simple CLI to manage the installation and lifecycle of agents in y
 
 When the CLI starts and before it shows the Reversa ASCII logo, it must clear the terminal screen. The logo should appear at the top of the terminal, with no previous content above it.
 
-The logo must reserve a margin to the right of the `Reversa` name and show `by sandeco` in white, aligned on the right side of the artwork.
+The `by sandeco` signature must appear in white on the last line of the artwork, after a right-side margin from the end of the large `Reversa` word. It must not float in the middle of the logo height.
+
+Expected format:
+
+```text
+  ______
+  | ___ \
+  | |_/ /_____   _____ _ __ ___  __ _
+  |    // _ \ \ / / _ \ '__/ __|/ _` |
+  | |\ \  __/\ V /  __/ |  \__ \ (_| |
+  \_| \_\___| \_/ \___|_|  |___/\__,_|  by sandeco
+
+  AI-Powered Reverse Engineering Framework
+```
 
 ---
 
@@ -23,6 +36,25 @@ npx reversa install
 Installs Reversa in the current legacy project. Detects present engines, asks for your preferences, and creates the entire required structure.
 
 Use once, in the root of the project you want to analyze.
+
+#### Installation Menu Layout
+
+The installer must treat the menu as the main interface, not as a text dump. Questions must be numbered, have a blank line before the question, and, when options are shown, a blank line between the question and the list.
+
+After the user confirms a multi-select question, the CLI must not print every selected item in one continuous line. This is forbidden because it creates a long, unreadable paragraph. Use one of these alternatives:
+
+- Do not render the full selection and continue to the next question.
+- Render a short summary, one line per team.
+
+The agents menu lists teams, not individual agents. The user picks at the team level; the installer expands each selected team into its agents:
+
+1. `Discovery Agents Core (required)`
+2. `Migration Agents`
+3. `Code Forward Agents`
+4. `Translators N8N->Specs->Python`
+5. `Pricing and Size Agents`
+
+The Discovery team is locked (always installed) and contains the previous Discovery Core plus what used to be the Discovery Add-ons (Reviewer, Visor, Data Master, Design System, Agents Help, Reconstructor). Even though the menu hides the agent-level detail, the final installation summary still breaks the count down by team (Discovery, Migration, Code Forward, Translators, Pricing).
 
 ---
 
